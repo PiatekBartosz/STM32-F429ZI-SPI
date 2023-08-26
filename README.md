@@ -4,4 +4,6 @@ This repostory contains a code that can be used to interface STM32 microcontrole
 
 Used hardware: STM32 F429ZI & MAX7219 LED 8-digit LED display driver
 
-The repository constains project build using STM32 Cube IDE & a register approach
+This repository constains 2 projects:
+  - Without using HAL libraries
+  - Using HAL libraries and STM32 Cube IDE 
