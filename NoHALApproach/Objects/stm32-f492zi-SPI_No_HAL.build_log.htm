@@ -27,190 +27,161 @@ Project File Date:  08/27/2023
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.cpp(13): warning: unused variable 'test_display_data' [-Wunused-variable]
-        uint16_t test_display_data = (0x0f << 8) | 1u; 
-                 ^
-main.cpp(15): warning: unused variable 'rxd' [-Wunused-variable]
+main.cpp(15): warning: variable 'rxd' set but not used [-Wunused-but-set-variable]
         uint16_t rxd = 0;
                  ^
-main.cpp(45): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(34): warning: 'return' will never be executed [-Wunreachable-code-return]
+        return 0;
+               ^
+main.cpp(55): warning: use of old-style cast [-Wold-style-cast]
         RCC->AHB1ENR |= ((1u << 1)                      //ENABLE GPIOA CLOCK
         ^~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1260): note: expanded from macro 'RCC'
 #define RCC                 ((RCC_TypeDef *) RCC_BASE)
                              ^               ~~~~~~~~
-main.cpp(49): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(59): warning: use of old-style cast [-Wold-style-cast]
   RCC->APB2ENR |= (1u << 12);                   //ENABLE SPI1 CLOCK
   ^~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1260): note: expanded from macro 'RCC'
 #define RCC                 ((RCC_TypeDef *) RCC_BASE)
                              ^               ~~~~~~~~
-main.cpp(63): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(73): warning: use of old-style cast [-Wold-style-cast]
         GPIOA->MODER &= ~(3u << (2 * 4));               // Reset PA4
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1248): note: expanded from macro 'GPIOA'
 #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(65): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(75): warning: use of old-style cast [-Wold-style-cast]
         GPIOB->MODER &= ~((3u << (2 * 3))                       // Reset PB3
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1249): note: expanded from macro 'GPIOB'
 #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(71): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(81): warning: use of old-style cast [-Wold-style-cast]
         GPIOA->MODER |= (2u << (2 * 4));                // Set PA4
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1248): note: expanded from macro 'GPIOA'
 #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(73): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(83): warning: use of old-style cast [-Wold-style-cast]
         GPIOB->MODER |= ((2u << (2 * 3))                        // Set PB3
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1249): note: expanded from macro 'GPIOB'
 #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(83): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(93): warning: use of old-style cast [-Wold-style-cast]
         GPIOA->AFR[0] &= ~(15u << (2 * 4));                     // Reset PA4
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1248): note: expanded from macro 'GPIOA'
 #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(85): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(95): warning: use of old-style cast [-Wold-style-cast]
         GPIOB->AFR[0] &= ~((15u << (2 * 3))                     // Reset PB3
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1249): note: expanded from macro 'GPIOB'
 #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(91): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(101): warning: use of old-style cast [-Wold-style-cast]
         GPIOA->AFR[0] |= (5u << (2 * 4));               // Set PA4
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1248): note: expanded from macro 'GPIOA'
 #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(93): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(103): warning: use of old-style cast [-Wold-style-cast]
         GPIOB->AFR[0] |= ((5u << (2 * 3))                       // Set PB3
         ^~~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1249): note: expanded from macro 'GPIOB'
 #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
                              ^                ~~~~~~~~~~
-main.cpp(102): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(112): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR1 &= ~((1u << 15)                       // Full duplex
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(113): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(123): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR1 |= ((1u << 11)                        // Set 16-bit received data
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(120): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(130): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR2 &= ~((1u << 7)                        // No Tx buffer empty interrupt
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(129): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(139): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR2 |= (1u << 2);                 // No multimaster configuration
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(138): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(148): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR1 |= (1u << 6);
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(141): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(151): warning: use of old-style cast [-Wold-style-cast]
         SPI1->DR = (uint16_t) tx_data;
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(141): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(151): warning: use of old-style cast [-Wold-style-cast]
         SPI1->DR = (uint16_t) tx_data;
                    ^          ~~~~~~~
-main.cpp(144): warning: use of old-style cast [-Wold-style-cast]
-        while ( ((SPI1->SR) & (1u << 7) | (!(SP1->SR) & (1u << 0))) );
+main.cpp(154): warning: use of old-style cast [-Wold-style-cast]
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
                   ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(144): error: use of undeclared identifier 'SP1'
-        while ( ((SPI1->SR) & (1u << 7) | (!(SP1->SR) & (1u << 0))) );
-                                             ^
-main.cpp(147): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(154): warning: use of old-style cast [-Wold-style-cast]
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                                             ^~~~
+C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
+#define SPI1                ((SPI_TypeDef *) SPI1_BASE)
+                             ^               ~~~~~~~~~
+main.cpp(154): warning: logical not is only applied to the left hand side of this bitwise operator [-Wlogical-not-parentheses]
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                                           ^           ~
+main.cpp(154): note: add parentheses after the '!' to evaluate the bitwise operator first
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                                           ^
+                                            (                     )
+main.cpp(154): note: add parentheses around left hand side expression to silence this warning
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                                           ^
+                                           (          )
+main.cpp(154): warning: '&' within '|' [-Wbitwise-op-parentheses]
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                 ~~~~~~~~~~~^~~~~~~~~~~ ~
+main.cpp(154): note: place parentheses around the '&' expression to silence this warning
+        while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
+                            ^
+                 (                     )
+main.cpp(157): warning: use of old-style cast [-Wold-style-cast]
         rx_data = SPI1->DR;
                   ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(147): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+main.cpp(157): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
         rx_data = SPI1->DR;
                 ~ ~~~~~~^~
-main.cpp(150): warning: use of old-style cast [-Wold-style-cast]
+main.cpp(160): warning: use of old-style cast [-Wold-style-cast]
         SPI1->CR1 &= ~(1u << 6);
         ^~~~
 C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1233): note: expanded from macro 'SPI1'
 #define SPI1                ((SPI_TypeDef *) SPI1_BASE)
                              ^               ~~~~~~~~~
-main.cpp(158): warning: use of old-style cast [-Wold-style-cast]
-    RCC->APB1ENR1 |= (1u << 0);
-    ^~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1260): note: expanded from macro 'RCC'
-#define RCC                 ((RCC_TypeDef *) RCC_BASE)
-                             ^               ~~~~~~~~
-main.cpp(158): error: no member named 'APB1ENR1' in 'RCC_TypeDef'; did you mean 'APB1ENR'?
-    RCC->APB1ENR1 |= (1u << 0);
-         ^~~~~~~~
-         APB1ENR
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(708): note: 'APB1ENR' declared here
-  __IO uint32_t APB1ENR;       /*!< RCC APB1 peripheral clock enable register,                   Address offset: 0x40 */
-                ^
-main.cpp(161): warning: use of old-style cast [-Wold-style-cast]
-    TIM2->PSC = 0;
-    ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-main.cpp(164): warning: use of old-style cast [-Wold-style-cast]
-    TIM2->ARR = (uint32_t)4000000;
-    ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-main.cpp(164): warning: use of old-style cast [-Wold-style-cast]
-    TIM2->ARR = (uint32_t)4000000;
-                ^         ~~~~~~~
-main.cpp(167): warning: use of old-style cast [-Wold-style-cast]
-    TIM2->CNT = 0;
-    ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-main.cpp(170): warning: use of old-style cast [-Wold-style-cast]
-    TIM2->CR1 |= (1u << 0);
-    ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-main.cpp(188): warning: use of old-style cast [-Wold-style-cast]
-    prevCntVal = TIM2->CNT; 
-                 ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-main.cpp(194): warning: use of old-style cast [-Wold-style-cast]
-        currentCntVal = TIM2->CNT;
-                        ^~~~
-C:/Users/Bartek/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f429xx.h(1192): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^               ~~~~~~~~~
-31 warnings and 2 errors generated.
+26 warnings generated.
 compiling main.cpp...
-".\Objects\stm32-f492zi-SPI_No_HAL.axf" - 2 Error(s), 31 Warning(s).
+linking...
+Program Size: Code=680 RO-data=444 RW-data=0 ZI-data=1632  
+".\Objects\stm32-f492zi-SPI_No_HAL.axf" - 0 Error(s), 26 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -236,13 +207,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F42xxx_43xxx_OPT.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
-      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f429xx.s
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F42xxx_43xxx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f429xx.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

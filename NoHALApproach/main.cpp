@@ -14,13 +14,23 @@ int main(void){
 	
 	uint16_t rxd = 0;
 	
-	initTim2();
 	
-	initSPI();
+	//////////////////////////
 	
+	// TODO: make delay
 	
+	setPinMode();
 	
+	setAlternateFunction();
 	
+	configSPI();
+	
+	//////////////////////////
+	
+	while(1)
+	{
+		rxd = transferFunction(test_display_data);
+	}
 	return 0;
 }
 
@@ -141,7 +151,7 @@ uint16_t transferFunction(uint16_t tx_data){
 	SPI1->DR = (uint16_t) tx_data;
 	
 	// Wait until send (checks BUSY and RX not empty respectively)
-	while ( ((SPI1->SR) & (1u << 7) | (!(SP1->SR) & (1u << 0))) );
+	while ( ((SPI1->SR) & (1u << 7) | (!(SPI1->SR) & (1u << 0))) );
 	
 	// Read from buffer TODO: for now do not ignore dummy bits
 	rx_data = SPI1->DR;
@@ -152,65 +162,3 @@ uint16_t transferFunction(uint16_t tx_data){
 	return rx_data;
 }
 
-void initTim2(void) 
-{
-    //ENABLE TIM2 CLOCK
-    RCC->APB1ENR1 |= (1u << 0);
-    
-    //LEAVE THE COUNTER FREQUENCY UNCHANGED
-    TIM2->PSC = 0;
-    
-    //SET TIMER RELOAD VALUE
-    TIM2->ARR = (uint32_t)4000000;
-    
-    //SET INITIAL COUNTER VALUE
-    TIM2->CNT = 0;
-    
-    //ENABLE TIM2 COUNTER
-    TIM2->CR1 |= (1u << 0);
-}
-
-void delay(unsigned int ms)
-{
-    /*HOLDS THE TOTAL COUNT FROM TM2_CNT REGISTER TO RECORD HOW
-    MUCH TIME ELAPSED.*/
-    unsigned int counter = 0;
-    //HOLDS THE COUNT FOR THE COUNTER TO COUNT TO.
-    unsigned int goalCount = ms * 4000u;
-    //HOLDS THE MOST RECENT VALUE OBTAINED FROM TIM2_CNT.
-    unsigned int currentCntVal = 0;
-    //HOLDS THE PREVIOUS VALUE OBTAINED FROM TIM2_CNT.
-    unsigned int prevCntVal = 0;
-    //HOLDS RESULT OF CALCULATION BETWEEN CURRENT AND PREVIOUS COUNTS.
-    unsigned int countToAdd = 0;
-    
-    //GET INITIAL VALUE OF CNT
-    prevCntVal = TIM2->CNT; 
-    
-    //LOOP UNTIL COUNTER IS EQUAL OR EXCEED GOAL COUNT
-    while(counter < goalCount)
-    {
-        //GET NEWEST COUNT
-        currentCntVal = TIM2->CNT;
-        
-        //HANDLE SITUATION WHERE TIM2_CNT RESET
-        if(currentCntVal < prevCntVal)
-        {
-            //GET THE COUNT BEFORE THE CNT REGISTER RESET AND THEN 
-            //ADD THE COUNT AFTER IT RESET TO GET ELAPSED COUNT
-            countToAdd = (4000000 - prevCntVal) + currentCntVal;
-        }
-        else
-        {
-            //SSUBTRACT CURRENT COUNT FROM PREVIOUS COUNT TO GET
-            //ELAPSED COUNT
-            countToAdd = currentCntVal - prevCntVal;
-        }
-        
-        //ADD ELAPSED COUNT TO THE COUNTER
-        counter += countToAdd;
-        
-        //CURRENT COUNT NOW BECOMES PREVIOUS COUNT
-        prevCntVal = currentCntVal;
-    }
-}
